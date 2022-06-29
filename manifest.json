@@ -1,11 +1,10 @@
 {
    "background": {
-      "scripts": ["background.js"],
-      "persistent": false
+      "service_worker": "background.js"
    },
    "content_scripts": [ {
       "js": ["js/cookie.js" ],
-      "matches": [ "https://qiandao.today/*"]
+      "matches": [ "https://qd.zhangnew.com/*"]
    } ],
    "default_locale": "en",
    "description": "__MSG_description__",
@@ -15,8 +14,9 @@
       "48": "images/logo48.png",
       "128": "images/logo128.png"
    },
-   "manifest_version": 2,
-   "permissions": [ "cookies", "tabs", "http://*/*", "https://*/*"],
+   "manifest_version": 3,
+   "permissions": [ "cookies", "tabs"],
+   "host_permissions": ["http://*/*", "https://*/*"],
    "name": "__MSG_appName__",
-   "version": "0.0.6"
+   "version": "0.0.7"
 }

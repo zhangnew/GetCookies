@@ -1,6 +1,6 @@
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     console.log(tab);
-    if (changeInfo.status === 'loading' && tab.url.indexOf("qiandao.today") != -1) {
+    if (changeInfo.status === 'loading' && tab.url.indexOf("qd.zhangnew.com") != -1) {
         if (!chrome.runtime.onConnect.hasListeners()) {
             chrome.runtime.onConnect.addListener(function(port) {
                 console.assert(port.name == "get_cookie");
@@ -35,22 +35,4 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     }
 
 });
-// if (cookie) {
-//     var data = cookies.name + "=" + cookies.value;
-//     port.postMessage({"cookie": data});
-//     console.log(data);
-// }
-// chrome.runtime.onMessage.addListener(
-//     function(request, sender, sendResponse) {
-//         if (request.do == "get_cookie") {
-//             var data="";
-//             chrome.cookies.get({"url": request.domain, "name": request.name}, function(cookies) {
-//                 if(cookies){
-//                     data = cookies.name + "=" + cookies.value;
-//                 }
 
-//             });
-//             sendResponse({"cookie": data});
-//             console.log(data);
-//         }
-//     });  
